@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+require("dotenv").config();
 // //connect with mongodb with db name
 // mongoose.connect("mongodb://localhost:27017/students-api", {
 //     useCreateIndex: true,
@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 // })
 
 //connect with mongodb atlas
-mongoose.connect("mongodb+srv://student_api:student_api@cluster0.sueqi.mongodb.net/StudentDB?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
