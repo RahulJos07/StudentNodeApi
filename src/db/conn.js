@@ -12,12 +12,13 @@ require("dotenv").config();
 // })
 
 //connect with mongodb atlas
-mongoose.connect(process.env.MONGO_URL, {
+//process.env.MONGO_URL
+mongoose.connect("mongodb+srv://student_api:student_api@cluster0.sueqi.mongodb.net/StudentDB?retryWrites=true&w=majority", {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=>{
-    console.log("connection is succesful");
+    console.log("connection is successful");
 }).catch((e)=>{
     console.log("no connection");
 })
